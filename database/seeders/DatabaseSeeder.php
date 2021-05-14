@@ -34,5 +34,21 @@ class DatabaseSeeder extends Seeder
                 'password' => bcrypt('88888888'),
             ],
         ]);
+        DB::table('posts')->insert([
+            [
+                'name' => 'Post 1',
+                'user_id' => '1',
+                'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis architecto quo vel totam laudantium unde excepturi aperiam mollitia hic dolores.',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Post 2',
+                'user_id' => '2',
+                'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis architecto quo vel totam laudantium unde excepturi aperiam mollitia hic dolores.',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ]);
     }
 }

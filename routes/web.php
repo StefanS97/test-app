@@ -21,4 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/post', [PostController::class, 'index']);
+Route::get('/post', [PostController::class, 'index'])
+    ->middleware('auth')
+    ->name('posts.index');

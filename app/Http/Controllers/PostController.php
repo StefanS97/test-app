@@ -11,10 +11,11 @@ class PostController extends Controller
 
     protected $postService;
 
-    public function __constructor(PostService $postService)
+    public function __construct(PostService $service)
     {
-        $this->postService = $postService;
+        $this->postService = $service;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +24,6 @@ class PostController extends Controller
     public function index()
     {
         $posts = $this->postService->getAllPosts();
-        ddd($posts);
     }
 
     /**

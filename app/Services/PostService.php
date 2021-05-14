@@ -12,8 +12,8 @@ class PostService
         $user = Auth::user();
         if ($user->role === 'admin') {
             return Post::all();
-        } else {
-            return $user->posts;
         }
+        
+        return $user->posts;
     }
 }

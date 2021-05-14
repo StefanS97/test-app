@@ -11,10 +11,9 @@ class PostService
     {
         $user = Auth::user();
         if ($user->role === 'admin') {
-           ddd(Post::all());
+            return Post::all();
         } else {
-            $userPosts = $user->posts;
-            ddd($userPosts);
+            return $user->posts;
         }
     }
 }

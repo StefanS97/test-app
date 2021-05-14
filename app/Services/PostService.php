@@ -10,10 +10,10 @@ class PostService
     public function getAllPosts()
     {
         $user = Auth::user();
-        if ($user->role === 'admin') {
+        if ($user->isAdmin()) {
             return Post::all();
         }
-        
+
         return $user->posts;
     }
 }

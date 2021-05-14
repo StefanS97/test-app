@@ -24,6 +24,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = $this->postService->getAllPosts();
+        return view('post', ['posts' => $posts]);
     }
 
     /**

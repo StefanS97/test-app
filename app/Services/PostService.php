@@ -16,4 +16,9 @@ class PostService
 
         return $user->posts;
     }
+
+    public function getPost(Post $post)
+    {
+        // return Post::where('id', $post->id);
+    }
 }

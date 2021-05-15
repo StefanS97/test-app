@@ -38,7 +38,7 @@
                         </li>
 
                         <li>
-                            <a href="#" class="nav-link">{{ __('Add') }}</a>
+                            <a class="nav-link" href="#">{{ __('Add') }}</a>
                         </li>
                     </ul>
 

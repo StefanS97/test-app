@@ -6,7 +6,7 @@
         <div class="col-6">
             <div class="card">
                 <div class="card-header">Create new Post</div>
-                <form class="p-3">
+                <form class="p-3" action="{{ route('post.store') }}" method="POST">
                     <div class="form-group">
                         <label for="postName">Post Name</label>
                         <input id="postName" name="postName" class="form-control"

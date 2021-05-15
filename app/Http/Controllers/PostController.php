@@ -24,7 +24,7 @@ class PostController extends Controller
 
     public function create()
     {
-        //
+        ddd('here.');
     }
 
     public function store(Request $request)

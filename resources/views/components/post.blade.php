@@ -1,4 +1,4 @@
-<div class="card m-2" style="width: 18rem;">
+<div class="card m-2">
     <div class="card-body">
         <h5 class="card-title">{{$post->name}}</h5>
         <p class="card-text">{{$post->text}}</p>

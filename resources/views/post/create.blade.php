@@ -8,6 +8,7 @@
                 <div class="card-header">Create new Post</div>
                 <form class="p-3" action="{{ route('posts.store') }}" method="POST">
                     @csrf
+
                     <div class="form-group">
                         <label for="postName">Post Name</label>
                         <input id="postName" name="postName" class="form-control @error('postName') is-invalid @enderror"
@@ -16,6 +17,7 @@
                     @error('postName')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
+
                     <div class="form-group">
                         <label for="postText">Text</label>
                         <input id="postText" name="postText" class="form-control @error('postText') is-invalid @enderror"
@@ -24,6 +26,7 @@
                     @error('postText')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
+                    
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

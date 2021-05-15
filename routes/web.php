@@ -27,5 +27,5 @@ Route::get('/post', [PostController::class, 'index'])
     ->name('posts.index');
 Route::get('/post/{post}', [PostController::class, 'show'])
     ->middleware('auth')
-    ->name('posts.index');
+    ->name('posts.show');
 

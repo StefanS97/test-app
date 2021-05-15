@@ -6,7 +6,7 @@
 
         @foreach ($posts as $post)
         
-        <x-post/>
+        <x-post :post='$post'/>
         
         @endforeach
         

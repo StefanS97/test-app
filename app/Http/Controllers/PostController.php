@@ -29,7 +29,12 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        ddd($request);
+        $data = $request->all();
+        $validated = $request->validate([
+            'postName' => 'required|max:10',
+            'postText' => 'required|max:255',
+        ]);
+
     }
 
     public function show(Post $post)

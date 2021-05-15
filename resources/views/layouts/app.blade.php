@@ -37,7 +37,9 @@
                             <a class="nav-link" href="{{ route('posts.index') }}">{{ __('Posts') }}</a>
                         </li>
 
-                        <a href="#" class="btn btn-primary">Add</a>
+                        <li>
+                            <a href="#" class="btn btn-primary">{{ __('Add') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

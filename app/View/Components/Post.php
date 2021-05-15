@@ -7,10 +7,12 @@ use Illuminate\View\Component;
 class Post extends Component
 {
     public $post;
+    public $type;
 
-    public function __construct($post)
+    public function __construct($post, $type)
     {
         $this->post = $post;
+        $this->type = $type;
     }
 
     public function render()

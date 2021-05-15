@@ -4,5 +4,6 @@
         <p class="card-text">{{$post->text}}</p>
         <p>By: {{$post->user->name}}</p>
         <a href="/post/{{$post->id}}" class="btn btn-primary">View Post</a>
+        {{$type}}
     </div>
 </div>

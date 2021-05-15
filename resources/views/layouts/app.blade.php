@@ -33,7 +33,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('posts.index') }}">{{ __('Posts') }}</a>
+                        </li>
 
+                        <a href="#" class="btn btn-primary">Add</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

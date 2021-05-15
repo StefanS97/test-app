@@ -38,7 +38,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">{{ __('Add') }}</a>
+                            <a class="nav-link" href="{{ route('posts.create') }}">{{ __('Add') }}</a>
                         </li>
                     </ul>
 

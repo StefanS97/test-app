@@ -34,7 +34,7 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        // $posts = $this->postService->getPost($post);
+        return view('post.post', ['post' => $post]);
     }
 
     public function edit(Post $post)

@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">Create new Post</div>
                 <form class="p-3" action="{{ route('posts.store') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="postName">Post Name</label>
                         <input id="postName" name="postName" class="form-control"

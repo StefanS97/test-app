@@ -6,10 +6,10 @@
         @foreach ($posts as $post)
         <div class="col-6">
             
-            <x-post :post='$post'/>
+            <x-post type='index' :post='$post'/>
             
         </div>
-            @endforeach
+        @endforeach
     </div>
 </div>
 @endsection

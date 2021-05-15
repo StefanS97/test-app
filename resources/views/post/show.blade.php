@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <x-post :post='$post'/>
+        <x-post type='show' :post='$post'/>
     </div>
 </div>
 @endsection

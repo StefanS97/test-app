@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <form>
             <div class="form-group">
-              <label for="PostName">Name of Post</label>
+              <label for="PostName">Post Name</label>
               <input type="text" class="form-control" id="postname" aria-describedby="postname" placeholder="Post Name">
             </div>
             <div class="form-group">

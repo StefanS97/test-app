@@ -23,10 +23,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
     ->name('home');
+
 Route::get('/post', [PostController::class, 'index'])
     ->middleware('auth')
     ->name('posts.index');
+
 Route::get('/post/{post}', [PostController::class, 'show'])
     ->middleware('auth')
     ->name('posts.show');
 
+Route::get('/post/create', [PostController::class, 'create'])
+    ->middleware('auth')
+    ->name('posts.create');

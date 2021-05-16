@@ -83,7 +83,7 @@ class PostController extends Controller
             return redirect()->back();
         }
         
-        toastr()->success('Data has been updated successfully!');
+        toastr()->success('Data has been deleted successfully!');
         return redirect()->route('posts.index');
     }
 }

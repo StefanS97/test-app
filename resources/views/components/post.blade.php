@@ -9,7 +9,11 @@
         @elseif ($type === 'show')
             <a href="{{ route('posts.edit', ['post' => $post->id]) }}" class="btn btn-success">Edit</a>
             <a href="{{ route('posts.index') }}" class="btn btn-primary">Back</a>
-            <a href="{{ route('posts.delete', ['post' => $post->id]) }}" class="btn btn-danger">Delete</a>
+            <form class="p-3" action="{{ route('posts.delete', ['post' => $post->id]) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
         @endif
     </div>
 </div>

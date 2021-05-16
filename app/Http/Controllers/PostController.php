@@ -35,9 +35,13 @@ class PostController extends Controller
             'postText' => 'required|max:255',
         ]);
         $data = $request->all();
-        $this->postService->storePost($data);
+        $post = $this->postService->storePost($data);
 
-        toastr()->success('Data has been saved successfully!');
+        if ($post) {
+            toastr()->success('Data has been saved successfully!');
+        } else {
+            toastr()->error;
+        }
         return redirect()->route('posts.index');
     }
 

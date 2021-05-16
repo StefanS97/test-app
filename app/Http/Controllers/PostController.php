@@ -63,7 +63,7 @@ class PostController extends Controller
             'postText' => 'required|max:255',
         ]);
         $data = $request->all();
-        $post = $this->postService->updatePost($post, $request);
+        $post = $this->postService->updatePost($post, $data);
 
         if (!$post) {
             toastr()->error('Error occured!');

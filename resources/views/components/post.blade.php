@@ -9,7 +9,7 @@
         @elseif ($type === 'show')
             <a href="{{ route('posts.edit', ['post' => $post->id]) }}" class="btn btn-success">Edit</a>
             <a href="{{ route('posts.index') }}" class="btn btn-primary">Back</a>
-            <a href="{{ route('posts.delete') }}" class="btn btn-danger">Delete</a>
+            <a href="{{ route('posts.delete', ['post' => $post->id]) }}" class="btn btn-danger">Delete</a>
         @endif
     </div>
 </div>

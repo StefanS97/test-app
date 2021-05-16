@@ -64,6 +64,14 @@ class PostController extends Controller
         ]);
         $data = $request->all();
         $post = $this->postService->updatePost($post, $request);
+
+        if (!$post) {
+            toastr()->error('Error occured!');
+            return redirect()->back();
+        }
+        
+        toastr()->success('Data has been saved successfully!');
+        return redirect()->route('posts.show');
     }
 
     public function destroy(Post $post)

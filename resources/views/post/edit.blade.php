@@ -6,7 +6,7 @@
         <div class="col-6">
             <div class="card">
                 <div class="card-header">Edit Post</div>
-                <form class="p-3" action="{{ route('posts.store') }}" method="POST">
+                <form class="p-3" action="#" method="POST">
                     @csrf
 
                     <div class="form-group">

@@ -37,6 +37,7 @@ class PostController extends Controller
         $data = $request->all();
         $this->postService->storePost($data);
 
+        toastr()->success('Data has been saved successfully!');
         return redirect()->route('posts.index');
     }
 

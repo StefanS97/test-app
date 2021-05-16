@@ -19,10 +19,8 @@ class PostService
 
     public function storePost($data)
     {        
-        $user_id = Auth::id();
-
         $post = Post::create([
-            'user_id' => $user_id,
+            'user_id' => Auth::id(),
             'name' => $data['postName'],
             'text' => $data['postText']
         ]);

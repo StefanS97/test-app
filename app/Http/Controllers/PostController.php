@@ -70,7 +70,7 @@ class PostController extends Controller
             return redirect()->back();
         }
         
-        toastr()->success('Data has been saved successfully!');
+        toastr()->success('Data has been updated successfully!');
         return redirect()->route('posts.show', ['post' => $post->id]);
     }
 

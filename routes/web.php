@@ -33,6 +33,9 @@ Route::get('/post/create', [PostController::class, 'create'])
 Route::post('/post', [PostController::class, 'store'])
     ->middleware('auth')
     ->name('posts.store');
+Route::get('/post/{post}/edit', [PostController::class, 'edit'])
+    ->middleware('auth')
+    ->name('posts.edit');
 Route::get('/post/{post}', [PostController::class, 'show'])
     ->middleware('auth')
     ->name('posts.show');

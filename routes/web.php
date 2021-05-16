@@ -19,23 +19,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
     ->name('home');
 
-Route::get('/post', [PostController::class, 'index'])
-    ->middleware('auth')
-    ->name('posts.index');
-Route::get('/post/create', [PostController::class, 'create'])
-    ->middleware('auth')
-    ->name('posts.create');
-Route::post('/post', [PostController::class, 'store'])
-    ->middleware('auth')
-    ->name('posts.store');
-Route::get('/post/{post}/edit', [PostController::class, 'edit'])
-    ->middleware('auth')
-    ->name('posts.edit');
-Route::get('/post/{post}', [PostController::class, 'show'])
-    ->middleware('auth')
-    ->name('posts.show');
+Route::middleware('auth')->group(function () {
+    Auth::routes();
+
+    Route::get('/post', [PostController::class, 'index'])
+        ->name('posts.index');
+    Route::get('/post/create', [PostController::class, 'create'])
+        ->name('posts.create');
+    Route::post('/post', [PostController::class, 'store'])
+        ->name('posts.store');
+    Route::get('/post/{post}/edit', [PostController::class, 'edit'])
+        ->name('posts.edit');
+    Route::get('/post/{post}', [PostController::class, 'show'])
+        ->name('posts.show');
+});

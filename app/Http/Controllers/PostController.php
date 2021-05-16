@@ -30,7 +30,12 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $store = $this->postService->store($request);
+        $validated = $request->validate([
+            'postName' => 'required|max:10',
+            'postText' => 'required|max:255',
+        ]);
+        $data = $request->all();
+        $store = $this->postService->store($data);
         return view('post.index');
     }
 

@@ -18,19 +18,15 @@ class PostService
         return $user->posts;
     }
 
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'postName' => 'required|max:10',
-            'postText' => 'required|max:255',
-        ]);
-        
+    public function store($data)
+    {        
         $user = Auth::user();
 
+        ddd($data);
         return Post::create([
             'user_id' => $user->id,
-            'name' => $request->postName,
-            'text' => $request->postText
+            'name' => $data->postName,
+            'text' => $data->postText
         ]);
 
     }

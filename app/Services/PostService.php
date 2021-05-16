@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Models\Post;
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PostService

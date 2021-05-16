@@ -12,7 +12,7 @@
                     <div class="form-group">
                         <label for="postName">Post Name</label>
                         <input id="postName" name="postName" class="form-control @error('postName') is-invalid @enderror"
-                               type="text" placeholder="Post Name" value="{{ old('postName') }}">
+                               type="text" placeholder="Post Name" value="{{ old('postName', $post->name) }}">
                     </div>
                     @error('postName')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <label for="postText">Text</label>
                         <input id="postText" name="postText" class="form-control @error('postText') is-invalid @enderror"
-                               type="text" placeholder="Text" value="{{ old('postText') }}">
+                               type="text" placeholder="Text" value="{{ old('postText', $post->text) }}">
                     </div>
                     @error('postText')
                         <div class="alert alert-danger">{{ $message }}</div>

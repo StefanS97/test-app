@@ -76,6 +76,14 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
-        $this->postService->deletePost($post);
+        $delete = $this->postService->deletePost($post);
+
+        if (!$delete) {
+            toastr()->error('Error occured!');
+            return redirect()->back();
+        }
+        
+        toastr()->success('Data has been updated successfully!');
+        return redirect()->route('posts.index');
     }
 }

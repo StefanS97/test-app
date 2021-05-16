@@ -37,11 +37,12 @@ class PostController extends Controller
         $data = $request->all();
         $post = $this->postService->storePost($data);
 
-        if ($post) {
-            toastr()->success('Data has been saved successfully!');
-        } else {
-            toastr()->error;
+        if (!$post) {
+            toastr()->error('Error occured!');
+            return redirect()->back();
         }
+        
+        toastr()->success('Data has been saved successfully!');
         return redirect()->route('posts.index');
     }
 

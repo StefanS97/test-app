@@ -8,6 +8,7 @@
                 <div class="card-header">Edit Post</div>
                 <form class="p-3" action="#" method="POST">
                     @csrf
+                    @method('PUT')
 
                     <div class="form-group">
                         <label for="postName">Post Name</label>

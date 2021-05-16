@@ -58,7 +58,7 @@ class PostController extends Controller
 
     public function update(Request $request, Post $post)
     {
-        //
+        ddd('works');
     }
 
     public function destroy(Post $post)

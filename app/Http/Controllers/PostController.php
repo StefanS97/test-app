@@ -30,12 +30,12 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'postName' => 'required|max:10',
             'postText' => 'required|max:255',
         ]);
         $data = $request->all();
-        $store = $this->postService->storePost($data);
+        $this->postService->storePost($data);
 
         return redirect()->route('posts.index');
     }

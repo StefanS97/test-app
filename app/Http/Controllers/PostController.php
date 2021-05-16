@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Services\PostService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -29,12 +30,8 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->all();
-        $validated = $request->validate([
-            'postName' => 'required|max:10',
-            'postText' => 'required|max:255',
-        ]);
-
+        $store = $this->postService->store($request);
+        return view('post.index');
     }
 
     public function show(Post $post)

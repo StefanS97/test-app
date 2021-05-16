@@ -35,8 +35,9 @@ class PostController extends Controller
             'postText' => 'required|max:255',
         ]);
         $data = $request->all();
-        $store = $this->postService->store($data);
-        return view('post.index');
+        $store = $this->postService->storePost($data);
+
+        // return view('post.index');
     }
 
     public function show(Post $post)

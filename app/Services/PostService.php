@@ -18,16 +18,16 @@ class PostService
         return $user->posts;
     }
 
-    public function store($data)
+    public function storePost($data)
     {        
-        $user = Auth::user();
+        $user_id = Auth::id();
 
-        ddd($data);
-        return Post::create([
-            'user_id' => $user->id,
-            'name' => $data->postName,
-            'text' => $data->postText
+        $post = Post::create([
+            'user_id' => $user_id,
+            'name' => $data['postName'],
+            'text' => $data['postText']
         ]);
 
+        return $post;
     }
 }

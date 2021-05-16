@@ -27,4 +27,12 @@ class PostService
 
         return $post;
     }
+
+    public function updatePost(Post $post, $data)
+    {
+        $post->name = $data['postName'];
+        $post->text = $data['postText'];
+        $post->save();
+
+    }
 }

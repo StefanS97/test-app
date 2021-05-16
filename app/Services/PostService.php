@@ -36,4 +36,9 @@ class PostService
 
         return $post;
     }
+
+    public function deletePost(Post $post)
+    {
+        # code...
+    }
 }

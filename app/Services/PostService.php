@@ -34,5 +34,6 @@ class PostService
         $post->text = $data['postText'];
         $post->save();
 
+        return $post;
     }
 }

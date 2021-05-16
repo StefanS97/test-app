@@ -58,7 +58,12 @@ class PostController extends Controller
 
     public function update(Request $request, Post $post)
     {
-        //
+        $request->validate([
+            'postName' => 'required|max:10',
+            'postText' => 'required|max:255',
+        ]);
+        $data = $request->all();
+        $post = $this->postService->updatePost($post, $request);
     }
 
     public function destroy(Post $post)

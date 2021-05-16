@@ -37,7 +37,7 @@ class PostController extends Controller
         $data = $request->all();
         $store = $this->postService->storePost($data);
 
-        // return view('post.index');
+        return redirect()->route('posts.index');
     }
 
     public function show(Post $post)

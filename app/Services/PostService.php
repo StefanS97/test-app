@@ -39,6 +39,6 @@ class PostService
 
     public function deletePost(Post $post)
     {
-        $post->delete();
+        return $post->delete();
     }
 }

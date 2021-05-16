@@ -33,6 +33,8 @@ Route::middleware('auth')->group(function () {
         ->name('posts.store');
     Route::get('/post/{post}/edit', [PostController::class, 'edit'])
         ->name('posts.edit');
+    Route::put('/post/update', [PostController::class, 'update'])
+        ->name('posts.update');
     Route::get('/post/{post}', [PostController::class, 'show'])
         ->name('posts.show');
 });

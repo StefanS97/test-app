@@ -19,12 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
     ->name('home');
 
 Route::middleware('auth')->group(function () {
-    Auth::routes();
-
     Route::get('/post', [PostController::class, 'index'])
         ->name('posts.index');
     Route::get('/post/create', [PostController::class, 'create'])

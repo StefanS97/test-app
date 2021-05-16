@@ -7,8 +7,8 @@
             <a href="{{route('posts.show', ['post' => $post->id])}}"
                 class="btn btn-primary">View Post</a>
         @elseif ($type === 'show')
-            <button type="submit" class="btn btn-success">Edit</button>
-            <a href="{{route('posts.index')}}" class="btn btn-primary">Back</a>
+            <a href="{{ route('posts.edit') }}" class="btn btn-success">Edit</a>
+            <a href="{{ route('posts.index') }}" class="btn btn-primary">Back</a>
         @endif
     </div>
 </div>

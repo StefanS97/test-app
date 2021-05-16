@@ -71,7 +71,7 @@ class PostController extends Controller
         }
         
         toastr()->success('Data has been saved successfully!');
-        return redirect()->route('posts.show');
+        return redirect()->route('posts.show', ['post' => $post->id]);
     }
 
     public function destroy(Post $post)

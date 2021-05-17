@@ -13,7 +13,9 @@ class PostPolicy
 
     public function before(User $user)
     {
-        return $user->isAdmin();
+        if ($user->isAdmin()) {
+            return True;
+        }
     }
 
     public function view(User $user, Post $post)

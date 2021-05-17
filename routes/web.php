@@ -38,5 +38,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/post/{post}', [PostController::class, 'destroy'])
         ->name('posts.delete');
     Route::get('/post/{post}', [PostController::class, 'show'])
+        ->middleware('can:view,post')
         ->name('posts.show');
 });

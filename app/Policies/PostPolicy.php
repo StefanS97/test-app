@@ -11,30 +11,25 @@ class PostPolicy
 {
     use HandlesAuthorization;
 
-    public function view(User $user, Post $post)
+    public function before(User $user)
     {
         if ($user->isAdmin()) {
             return True;
         }
+    }
 
+    public function view(User $user, Post $post)
+    {
         return $user->id === $post->user_id;
     }
 
     public function update(User $user, Post $post)
     {
-        if ($user->isAdmin()) {
-            return True;
-        }
-
         return $user->id === $post->user_id;
     }
 
     public function delete(User $user, Post $post)
     {
-        if ($user->isAdmin()) {
-            return True;
-        }
-
         return False;
     }
 }

@@ -12,7 +12,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('text');
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->onDelete('restrict');
             $table->timestamps();
         });
     }

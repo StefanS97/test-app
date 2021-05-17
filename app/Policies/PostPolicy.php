@@ -37,14 +37,4 @@ class PostPolicy
 
         return False;
     }
-
-    public function restore(User $user, Post $post)
-    {
-        //
-    }
-
-    public function forceDelete(User $user, Post $post)
-    {
-        //
-    }
 }

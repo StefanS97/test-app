@@ -10,14 +10,11 @@ class PostPolicy
 {
     use HandlesAuthorization;
 
-    public function viewAny(User $user)
-    {
-        ddd($user);
-    }
-
     public function view(User $user, Post $post)
     {
-        //
+        if ($user->isAdmin() {
+            return True;
+        })
     }
 
     public function create(User $user)

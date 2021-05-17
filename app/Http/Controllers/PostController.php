@@ -20,7 +20,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $this->authorize('index', Auth::user(););
+        $this->authorize('index', Auth::user());
         $posts = $this->postService->getAllPosts();
         return view('post.index', ['posts' => $posts]);
     }

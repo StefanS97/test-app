@@ -15,6 +15,8 @@ class PostPolicy
         if ($user->isAdmin()) {
             return True;
         }
+
+        return $user->id === $post->user_id;
     }
 
     public function create(User $user)

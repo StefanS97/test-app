@@ -15,12 +15,10 @@ class PostController extends Controller
     public function __construct(PostService $service)
     {
         $this->postService = $service;
-        $this->authorizeResource(Post::class, 'post');
     }
 
     public function index()
     {
-        $this->authorize('index', Auth::user());
         $posts = $this->postService->getAllPosts();
         return view('post.index', ['posts' => $posts]);
     }
@@ -50,6 +48,7 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        $this->authorize('view', $post);
         return view('post.show', ['post' => $post]);
     }
 

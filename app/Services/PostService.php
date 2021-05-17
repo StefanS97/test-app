@@ -4,6 +4,8 @@ namespace App\Services;
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use PDOException;
+use Throwable;
 
 class PostService
 {
@@ -39,6 +41,11 @@ class PostService
 
     public function deletePost(Post $post)
     {
-        return $post->delete();
-    }
+        try {
+            $post->delete();
+            return True;
+        } catch (PDOException $e) {
+            report($e);
+            return False;
+        }
 }

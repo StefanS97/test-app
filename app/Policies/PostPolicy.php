@@ -12,9 +12,9 @@ class PostPolicy
 
     public function view(User $user, Post $post)
     {
-        if ($user->isAdmin() {
+        if ($user->isAdmin()) {
             return True;
-        })
+        }
     }
 
     public function create(User $user)

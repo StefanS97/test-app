@@ -48,4 +48,5 @@ class PostService
             report($e);
             return False;
         }
+    }
 }

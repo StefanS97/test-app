@@ -3,15 +3,14 @@
 namespace App\Services;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use PDOException;
-use Throwable;
-
 class PostService
 {
     public function getAllPosts()
     {
-        $user = Auth::user();
+        $user = User::find(Auth::id());
         if ($user->isAdmin()) {
             return Post::all();
         }

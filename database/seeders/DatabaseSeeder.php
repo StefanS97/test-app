@@ -50,5 +50,21 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now(),
             ]
         ]);
+        DB::table('comments')->insert([
+            [
+                'user_id' => '1',
+                'post_id' => '2',
+                'comment' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis architecto quo vel totam laudantium unde excepturi aperiam mollitia hic dolores.',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'user_id' => '2',
+                'post_id' => '1',
+                'comment' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis architecto quo vel totam laudantium unde excepturi aperiam mollitia hic dolores.',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ]);
     }
 }

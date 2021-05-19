@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Comment;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -10,12 +11,7 @@ class PostService
 {
     public function getAllPosts()
     {
-        $user = User::find(Auth::id());
-        if ($user->isAdmin()) {
-            return Post::all();
-        }
-
-        return $user->posts;
+        return Post::all();
     }
 
     public function storePost($data)
@@ -42,6 +38,28 @@ class PostService
     {
         try {
             $post->delete();
+            return True;
+        } catch (PDOException $e) {
+            report($e);
+            return False;
+        }
+    }
+
+    public function storeComment($comment, $post)
+    {
+        $comment = Comment::create([
+            'user_id' => Auth::id(),
+            'post_id' => $post->id,
+            'comment' => $comment,
+        ]);
+
+        return $comment;
+    }
+
+    public function deleteComment(Comment $comment)
+    {
+        try {
+            $comment->delete();
             return True;
         } catch (PDOException $e) {
             report($e);

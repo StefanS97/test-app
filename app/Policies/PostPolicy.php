@@ -14,14 +14,9 @@ class PostPolicy
     public function before(User $user)
     {
         if ($user->isAdmin()) {
-            return True;
+            return true;
         }
     }
-
-    // public function view(User $user, Post $post)
-    // {
-    //     return $user->id === $post->user_id;
-    // }
 
     public function update(User $user, Post $post)
     {
@@ -30,6 +25,6 @@ class PostPolicy
 
     public function delete(User $user, Post $post)
     {
-        return False;
+        return false;
     }
 }

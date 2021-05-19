@@ -14,9 +14,9 @@ class CommentPolicy
     {
         if ($user->isAdmin() || $user->id === $comment->user->id)
         {
-            return True;
+            return true;
         }
 
-        return False;
+        return false;
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,7 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/post/{post}/edit', [PostController::class, 'edit'])
         ->name('posts.edit');
     Route::put('/post/{post}', [PostController::class, 'update'])
-    ->middleware('can:update,post')
+        ->middleware('can:update,post')
         ->name('posts.update');
     Route::delete('/post/{post}', [PostController::class, 'destroy'])
         ->middleware('can:delete,post')
@@ -48,4 +49,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/comment/{comment}', [CommentController::class, 'destroy'])
         ->middleware('can:delete,comment')
         ->name('comment.delete');
+
+    Route::middleware('can:view,tag')->group(function () {
+        Route::get('/tag', [TagController::class, 'index'])
+            ->name('tag.index');
+        Route::get('/tag/create', [TagController::class, 'create'])
+            ->name('tag.create');
+        Route::post('/tag', [TagController::class, 'store'])
+            ->name('tag.store');
+        Route::get('/tag/{tag}/edit', [TagController::class, 'edit'])
+            ->name('tag.edit');
+        Route::get('/tag/{tag}', [TagController::class, 'show'])
+            ->name('tag.show');
+        Route::delete('/tag/{tag}', [TagController::class, 'destroy'])
+            ->name('tag.delete');
+        Route::put('/tag/{tag}', [TagController::class, 'update'])
+            ->name('tag.update');
+    });
 });

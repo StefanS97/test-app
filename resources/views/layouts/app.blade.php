@@ -39,8 +39,17 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('posts.create') }}">{{ __('Add') }}</a>
+                            <a class="nav-link" href="{{ route('posts.create') }}">{{ __('Add Post') }}</a>
                         </li>
+                        @if(Auth::user()->isAdmin())
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('tag.index') }}">{{ __('Tags') }}</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('tag.create') }}">{{ __('Create Tag') }}</a>
+                            </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -66,5 +66,17 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now(),
             ]
         ]);
+        DB::table('tags')->insert([
+            [
+                'name' => 'Tag 1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Tag 2',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ]);
     }
 }

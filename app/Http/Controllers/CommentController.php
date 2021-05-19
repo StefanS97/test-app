@@ -21,10 +21,9 @@ class CommentController extends Controller
         $request->validate([
             'comment' => 'required|max:255',
         ]);
-        $comment = $request->comment;
-        $newComment = $this->postService->storeComment($comment, $post);
+        $comment = $this->postService->storeComment($request->comment, $post);
 
-        if (!$newComment) {
+        if (!$comment) {
             toastr()->error('Error occured!');
             return redirect()->back();
         }

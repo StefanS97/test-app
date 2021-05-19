@@ -45,7 +45,7 @@ class PostService
         }
     }
 
-    public function storeComment($comment, $post)
+    public function storeComment($comment, Post $post)
     {
         $comment = Comment::create([
             'user_id' => Auth::id(),

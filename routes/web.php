@@ -62,9 +62,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/tag/{tag}/edit', [TagController::class, 'edit'])
         ->middleware('can:view,tag')
         ->name('tag.edit');
-    Route::get('/tag/{tag}', [TagController::class, 'show'])
-        ->middleware('can:view,tag')
-        ->name('tag.show');
     Route::delete('/tag/{tag}', [TagController::class, 'destroy'])
         ->middleware('can:view,tag')
         ->name('tag.delete');

@@ -43,11 +43,6 @@ class TagController extends Controller
         return redirect()->route('tag.index');
     }
 
-    public function show(Tag $tag)
-    {
-        return view('tag.show', ['tag' => $tag]);
-    }
-
     public function edit(Tag $tag)
     {
         return view('tag.edit', ['tag' => $tag]);
@@ -67,7 +62,7 @@ class TagController extends Controller
         }
         
         toastr()->success('Tag has been updated successfully!');
-        return redirect()->route('tag.show', ['tag' => $tag->id]);
+        return redirect()->route('tag.index');
     }
 
     public function destroy(Tag $tag)

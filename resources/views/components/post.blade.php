@@ -40,7 +40,9 @@
             @endforeach
 
             <div class="row p-2 pt-5">
-                <a href="{{ route('posts.edit', ['post' => $post->id]) }}" class="btn btn-success">Edit</a>
+                @can('update', $post)
+                    <a href="{{ route('posts.edit', ['post' => $post->id]) }}" class="btn btn-success">Edit</a>
+                @endcan
                 @can('delete', $post)
                 <form class="d-inline pr-4 " action="{{ route('posts.delete', ['post' => $post->id]) }}" method="POST">
                     @csrf

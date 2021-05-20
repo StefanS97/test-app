@@ -34,22 +34,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('posts.index') }}">{{ __('Posts') }}</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('posts.create') }}">{{ __('Add Post') }}</a>
-                        </li>
-                        @if(Auth::user()->isAdmin())
+                        @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('tag.index') }}">{{ __('Tags') }}</a>
+                                <a class="nav-link" href="{{ route('posts.index') }}">{{ __('Posts') }}</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('tag.create') }}">{{ __('Create Tag') }}</a>
+                                <a class="nav-link" href="{{ route('posts.create') }}">{{ __('Add Post') }}</a>
                             </li>
-                        @endif
+                            @if(Auth::user()->isAdmin())
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('tag.index') }}">{{ __('Tags') }}</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('tag.create') }}">{{ __('Create Tag') }}</a>
+                                </li>
+                            @endif
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->

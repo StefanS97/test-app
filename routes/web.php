@@ -50,20 +50,25 @@ Route::middleware('auth')->group(function () {
         ->middleware('can:delete,comment')
         ->name('comment.delete');
 
-    Route::middleware('can:view,tag')->group(function () {
-        Route::get('/tag', [TagController::class, 'index'])
-            ->name('tag.index');
-        Route::get('/tag/create', [TagController::class, 'create'])
-            ->name('tag.create');
-        Route::post('/tag', [TagController::class, 'store'])
-            ->name('tag.store');
-        Route::get('/tag/{tag}/edit', [TagController::class, 'edit'])
-            ->name('tag.edit');
-        Route::get('/tag/{tag}', [TagController::class, 'show'])
-            ->name('tag.show');
-        Route::delete('/tag/{tag}', [TagController::class, 'destroy'])
-            ->name('tag.delete');
-        Route::put('/tag/{tag}', [TagController::class, 'update'])
-            ->name('tag.update');
-    });
+    Route::get('/tag', [TagController::class, 'index'])
+        ->middleware('can:view,App\Models\Tag')
+        ->name('tag.index');
+    Route::get('/tag/create', [TagController::class, 'create'])
+        ->middleware('can:view,App\Models\Tag')
+        ->name('tag.create');
+    Route::post('/tag', [TagController::class, 'store'])
+        ->middleware('can:view,App\Models\Tag')
+        ->name('tag.store');
+    Route::get('/tag/{tag}/edit', [TagController::class, 'edit'])
+        ->middleware('can:view,tag')
+        ->name('tag.edit');
+    Route::get('/tag/{tag}', [TagController::class, 'show'])
+        ->middleware('can:view,tag')
+        ->name('tag.show');
+    Route::delete('/tag/{tag}', [TagController::class, 'destroy'])
+        ->middleware('can:view,tag')
+        ->name('tag.delete');
+    Route::put('/tag/{tag}', [TagController::class, 'update'])
+        ->middleware('can:view,tag')
+        ->name('tag.update');
 });

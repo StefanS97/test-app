@@ -3,11 +3,21 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        @foreach ($tags as $tag)
-        <div class="col-6">
-            <x-tag type="index" :tag="$tag"/>
-        </div>
-        @endforeach
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th></th>
+                    <th>Tag Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($tags as $tag)
+                    <x-tag type="index" :tag="$tag"/>
+                @endforeach
+            </tbody>
+        </table>        
     </div>
 </div>
 @endsection

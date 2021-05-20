@@ -10,10 +10,11 @@ class TagPolicy
 {
     use HandlesAuthorization;
 
-    public function view(User $user, Tag $tag)
+    public function view(User $user)
     {
         if ($user->isAdmin()) {
             return true;
         }
+        return false;
     }
 }

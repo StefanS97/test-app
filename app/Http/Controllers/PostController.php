@@ -13,13 +13,13 @@ class PostController extends Controller
 
     protected $postService;
     protected $tagService;
-    protected $tags;
+    protected $allTags;
 
     public function __construct(PostService $postService, TagService $tagService)
     {
         $this->postService = $postService;
         $this->tagService = $tagService;
-        $this->tags = $this->$tagService->getAllTags();
+        $this->allTags = $this->$tagService->getAllTags();
     }
 
     public function index()
@@ -30,7 +30,7 @@ class PostController extends Controller
 
     public function create()
     {
-       return view('post.create', ['tags' => $this->tags]);
+        return view('post.create', ['tags' => $this->allTags]);
     }
 
     public function store(Request $request)
@@ -58,7 +58,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        return view('post.edit', ['post' => $post, 'tags' => $this->tags]);
+        return view('post.edit', ['post' => $post, 'tags' => $this->allTags]);
     }
 
     public function update(Request $request, Post $post)

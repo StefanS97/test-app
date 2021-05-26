@@ -34,10 +34,11 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        ddd($request);
+        ddd($request->tags);
         $request->validate([
             'postName' => 'required|max:10',
             'postText' => 'required|max:255',
+            'tags' => 'required',
         ]);
         $data = $request->all();
         $post = $this->postService->storePost($data);

@@ -35,7 +35,7 @@
                             @endforeach
                         </select>
                     </div>
-                    @error('postTag')
+                    @error('tags')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 

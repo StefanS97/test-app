@@ -28,14 +28,14 @@
                     @enderror
 
                     <div class="form-group">
-                        <select class="form-control" multiple aria-label="Default select example">
-                            <option selected>Open this select menu</option>
+                        <select name="postTag" class="form-control @error('postText') is-invalid @enderror"
+                                multiple aria-label="Default select example">
                             @foreach ($tags as $tag)
                                 <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                             @endforeach
                         </select>
                     </div>
-                    @error('postText')
+                    @error('postTag')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 

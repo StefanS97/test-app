@@ -29,12 +29,12 @@ class PostController extends Controller
     public function create()
     {
         $tags = $this->tagService->getAllTags();
-        ddd($tags);
-        return view('post.create');
+        return view('post.create', ['tags' => $tags]);
     }
 
     public function store(Request $request)
     {
+        ddd($request);
         $request->validate([
             'postName' => 'required|max:10',
             'postText' => 'required|max:255',

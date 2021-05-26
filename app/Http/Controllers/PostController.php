@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Services\PostService;
+use App\Services\TagService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,10 +12,12 @@ class PostController extends Controller
 {
 
     protected $postService;
+    protected $tagService;
 
-    public function __construct(PostService $service)
+    public function __construct(PostService $postService, TagService $tagService)
     {
-        $this->postService = $service;
+        $this->postService = $postService;
+        $this->tagService = $tagService;
     }
 
     public function index()
@@ -25,6 +28,8 @@ class PostController extends Controller
 
     public function create()
     {
+        $tags = $this->tagService->getAllTags();
+        ddd($tags);
         return view('post.create');
     }
 

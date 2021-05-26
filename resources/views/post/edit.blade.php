@@ -28,6 +28,18 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
+                    <div class="form-group">
+                        <select name="tags[]" class="form-control @error('tags') is-invalid @enderror"
+                                multiple aria-label="Default select example">
+                            @foreach ($post->tags as $tag)
+                                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('tags')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
                     <button type="submit" class="btn btn-success">Update</button>
 
                 </form>

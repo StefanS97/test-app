@@ -34,7 +34,6 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        ddd($request->tags);
         $request->validate([
             'postName' => 'required|max:10',
             'postText' => 'required|max:255',

@@ -21,6 +21,7 @@ class PostService
             'name' => $data['postName'],
             'text' => $data['postText']
         ]);
+        $post->tags()->attach($data['tags']);
 
         return $post;
     }

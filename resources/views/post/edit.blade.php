@@ -31,7 +31,7 @@
                     <div class="form-group">
                         <select name="tags[]" class="form-control @error('tags') is-invalid @enderror"
                                 multiple aria-label="Default select example">
-                            @foreach ($post->tags as $tag)
+                            @foreach ($tags as $tag)
                                 <option value="{{ $tag->id }}" 
                                         {{
                                             (collect(old('tags', $post->tags->pluck('id')))->contains($tag->id))

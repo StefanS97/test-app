@@ -19,7 +19,7 @@ class PostController extends Controller
     {
         $this->postService = $postService;
         $this->tagService = $tagService;
-        $this->allTags = $this->$tagService->getAllTags();
+        $this->allTags = $this->tagService->getAllTags();
     }
 
     public function index()

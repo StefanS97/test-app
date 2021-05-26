@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
+                'id' => 1,
                 'name' => 'Admin Name',
                 'email' => 'admin@admin.com',
                 'role' => 'admin',
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
                 'password' => bcrypt('88888888'),
             ],
             [
+                'id' => 2,
                 'name' => 'User Name',
                 'email' => 'user@user.com',
                 'role' => 'user',
@@ -36,6 +38,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('posts')->insert([
             [
+                'id' => 1,
                 'name' => 'Post 1',
                 'user_id' => 1,
                 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis architecto quo vel totam laudantium unde excepturi aperiam mollitia hic dolores.',
@@ -43,6 +46,7 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 2,
                 'name' => 'Post 2',
                 'user_id' => 2,
                 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis architecto quo vel totam laudantium unde excepturi aperiam mollitia hic dolores.',
@@ -52,6 +56,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('comments')->insert([
             [
+                'id' => 1,
                 'user_id' => 1,
                 'post_id' => 2,
                 'comment' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis architecto quo vel totam laudantium unde excepturi aperiam mollitia hic dolores.',
@@ -59,6 +64,7 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'id' => 2,
                 'user_id' => 2,
                 'post_id' => 1,
                 'comment' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis architecto quo vel totam laudantium unde excepturi aperiam mollitia hic dolores.',
@@ -68,11 +74,13 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('tags')->insert([
             [
+                'id' => 1,
                 'name' => 'Tag 1',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
+                'id' => 2,
                 'name' => 'Tag 2',
                 'created_at' => now(),
                 'updated_at' => now(),

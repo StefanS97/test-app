@@ -9,7 +9,7 @@
                 <a href="{{ route('posts.show', ['post' => $post->id]) }}"
                     class="btn btn-primary">View Post</a>
             </div>
-            <div class="m2 pt-2">
+            <div class="m-2 pt-2">
                 @foreach ($post->tags as $tag)
                     <span class="badge bagde-pill badge-primary">{{ $tag->name }}</span>
                 @endforeach

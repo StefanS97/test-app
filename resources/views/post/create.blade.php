@@ -27,6 +27,18 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
+                    <div class="form-group">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                            @endforeach
+                          </select>
+                    </div>
+                    @error('postText')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
                     <button type="submit" class="btn btn-primary">Submit</button>
 
                 </form>

@@ -4,12 +4,18 @@
         <p class="card-text">{{$post->text}}</p>
         <p>By: {{$post->user->name}}</p>
         @if ($type === 'index')
-            <a href="{{ route('posts.show', ['post' => $post->id]) }}"
-                class="btn btn-primary">View Post</a>
+        <div class="row justify-content-between">
+            <div class="m-2">
+                <a href="{{ route('posts.show', ['post' => $post->id]) }}"
+                    class="btn btn-primary">View Post</a>
+            </div>
+            <div class="m2 pt-2">
+                @foreach ($post->tags as $tag)
+                    <span class="badge bagde-pill badge-primary">{{ $tag->name }}</span>
+                @endforeach
+            </div>
+        </div>
         @elseif ($type === 'show')
-            @foreach ($post->tags as $tag)
-                <span class="badge badge-pill badge-primary">{{ $tag->name }}</span>
-            @endforeach
 
             <div class="row">
                 <form class="p-2 pb-5" action="{{ route('comment.store', ['post' => $post->id]) }}" method="POST">

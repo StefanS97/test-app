@@ -7,6 +7,9 @@
             <a href="{{ route('posts.show', ['post' => $post->id]) }}"
                 class="btn btn-primary">View Post</a>
         @elseif ($type === 'show')
+            @foreach ($post->tags as $tag)
+                <span class="badge badge-pill badge-primary">{{ $tag->name }}</span>
+            @endforeach
 
             <div class="row">
                 <form class="p-2 pb-5" action="{{ route('comment.store', ['post' => $post->id]) }}" method="POST">

@@ -31,6 +31,7 @@ class PostService
         $post->name = $data['postName'];
         $post->text = $data['postText'];
         $post->save();
+        $post->tags()->sync($data['tags']);
 
         return $post;
     }

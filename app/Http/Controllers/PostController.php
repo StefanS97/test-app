@@ -38,6 +38,7 @@ class PostController extends Controller
         $request->validate([
             'postName' => 'required|max:10',
             'postText' => 'required|max:255',
+            'tags' => 'required',
         ]);
         $data = $request->all();
         $post = $this->postService->storePost($data);
@@ -66,6 +67,7 @@ class PostController extends Controller
         $request->validate([
             'postName' => 'required|max:10',
             'postText' => 'required|max:255',
+            'tags' => 'required',
         ]);
         $data = $request->all();
         $post = $this->postService->updatePost($post, $data);

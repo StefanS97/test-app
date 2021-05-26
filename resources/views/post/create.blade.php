@@ -28,7 +28,7 @@
                     @enderror
 
                     <div class="form-group">
-                        <select class="custom-select" multiple aria-label="Default select example">
+                        <select class="form-control" multiple aria-label="Default select example">
                             <option selected>Open this select menu</option>
                             @foreach ($tags as $tag)
                                 <option value="{{ $tag->id }}">{{ $tag->name }}</option>

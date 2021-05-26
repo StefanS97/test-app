@@ -28,7 +28,7 @@
                     @enderror
 
                     <div class="form-group">
-                        <select name="postTag" class="form-control @error('postText') is-invalid @enderror"
+                        <select name="tags" class="form-control @error('postText') is-invalid @enderror"
                                 multiple aria-label="Default select example">
                             @foreach ($tags as $tag)
                                 <option value="{{ $tag->id }}">{{ $tag->name }}</option>

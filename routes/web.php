@@ -51,6 +51,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/tag', [TagController::class, 'index'])
         ->middleware('can:view,App\Models\Tag')
         ->name('tag.index');
+    Route::get('/tag/create', [TagController::class, 'create']);
     Route::post('/tag', [TagController::class, 'store'])
         ->middleware('can:view,App\Models\Tag')
         ->name('tag.store');

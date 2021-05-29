@@ -29,8 +29,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
 Route::middleware('auth')->group(function () {
     Route::get('/post', [PostController::class, 'index'])
         ->name('posts.index');
-    Route::get('/post/create', [PostController::class, 'create'])
-        ->name('posts.create');
     Route::post('/post', [PostController::class, 'store'])
         ->name('posts.store');
     Route::get('/post/{post}/edit', [PostController::class, 'edit'])
@@ -53,9 +51,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/tag', [TagController::class, 'index'])
         ->middleware('can:view,App\Models\Tag')
         ->name('tag.index');
-    Route::get('/tag/create', [TagController::class, 'create'])
-        ->middleware('can:view,App\Models\Tag')
-        ->name('tag.create');
     Route::post('/tag', [TagController::class, 'store'])
         ->middleware('can:view,App\Models\Tag')
         ->name('tag.store');

@@ -21,11 +21,6 @@ class TagController extends Controller
         return view('tag.index', ['tags' => $tags]);
     }
 
-    public function create()
-    {
-        return view('tag.create');
-    }
-
     public function store(Request $request)
     {
         $request->validate([

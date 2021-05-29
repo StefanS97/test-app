@@ -28,11 +28,6 @@ class PostController extends Controller
         return view('post.index', ['posts' => $posts, 'tags' => $this->allTags]);
     }
 
-    public function create()
-    {
-        return view('post.create', ['tags' => $this->allTags]);
-    }
-
     public function store(Request $request)
     {
         $request->validate([

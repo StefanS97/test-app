@@ -11,7 +11,8 @@ class PostService
 {
     public function getAllPosts()
     {
-        return Post::all();
+        $posts = Post::orderBy('created_at', 'DESC')->get();
+        return $posts;
     }
 
     public function storePost($data)

@@ -25,7 +25,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = $this->postService->getAllPosts();
-        return view('post.index', ['posts' => $posts]);
+        return view('post.index', ['posts' => $posts, 'tags' => $this->allTags]);
     }
 
     public function create()

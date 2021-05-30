@@ -38,9 +38,9 @@
                     </div>
                 </form>
             </div>
-            <hr>
             
             @foreach ($post->comments as $comment)
+                <hr>
                 <div class="row justify-content-between">
                     <div class="col-8">
                         <p>- {{ $comment->comment }} </p>

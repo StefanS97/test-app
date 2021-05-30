@@ -20,7 +20,7 @@
                     @enderror
 
                     <div class="row justify-content-end mr-1">
-                        <button type="submit" class="btn btn-success">Update</button>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Update</button>
                     </div>
                 </form>
             </div>

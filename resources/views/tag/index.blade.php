@@ -19,11 +19,11 @@
                         <th>{{ $tag->id }}<th>
                         <td>{{ $tag->name }}</td>
                         <td>
-                            <a href="{{ route('tag.edit', ['tag' => $tag->id]) }}" class="btn btn-success">Edit</a>
+                            <a href="{{ route('tag.edit', ['tag' => $tag->id]) }}" class="btn btn-success"><i class="fa fa-pen"></i></a>
                             <form class="d-inline" action="{{ route('tag.delete', ['tag' => $tag->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>
@@ -33,7 +33,7 @@
                         <th></th>
                         <th></th>
                         <td class="row justify-content-end mr-1">
-                            <a href="{{ route('posts.index') }}" class="btn btn-primary">Back</a>
+                            <a href="{{ route('posts.index') }}" class="btn btn-primary"><i class="fa fa-backward"></i> Back</a>
                         </td>
                     </tr>
                 </tbody>

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-6">
             <div class="card">
-                <div class="card-header">Edit Tag</div>
+                <div class="card-header text-center">Edit Tag</div>
                 <form class="p-3" action="{{ route('tag.update', ['tag' => $tag->id]) }}" method="POST">
                     @csrf
                     @method('PUT')
@@ -19,8 +19,9 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 
-                    <button type="submit" class="btn btn-success">Update</button>
-
+                    <div class="row justify-content-end mr-1">
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </div>
                 </form>
             </div>
         </div>

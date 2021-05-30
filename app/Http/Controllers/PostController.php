@@ -91,6 +91,9 @@ class PostController extends Controller
 
     public function search(Request $request)
     {
+        $request->validate([
+            'search' => 'required',
+        ]);
         $posts = $this->postService->searchPost($request->search);
         return view('post.index', ['posts' => $posts, 'tags' => $this->allTags]);
     }

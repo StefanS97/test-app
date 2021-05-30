@@ -51,6 +51,7 @@ class PostService
     public function searchPost($searchName)
     {
         $posts = Post::where('name', 'LIKE', "%{$searchName}%")
+                     ->orderBy('created_at', 'DESC')
                      ->get();
         return $posts;
     }

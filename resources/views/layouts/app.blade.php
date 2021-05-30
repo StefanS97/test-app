@@ -44,8 +44,13 @@
                         @endauth
                     </ul>
 
+                    <form action="{{ route('posts.search') }}" method="POST" class="form-inline ml-auto mr-3 my-2 my-lg-0">
+                        @csrf
+                        <input class="form-control mr-sm-2" id="search" name="search" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i> Search</button>
+                    </form>
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))

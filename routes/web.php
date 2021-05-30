@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/post', [PostController::class, 'index'])
         ->name('posts.index');
     Route::post('/post', [PostController::class, 'store'])
-        ->name('posts.store');
+        ->name('posts.store');    
     Route::get('/post/{post}/edit', [PostController::class, 'edit'])
         ->name('posts.edit');
     Route::put('/post/{post}', [PostController::class, 'update'])
@@ -41,6 +41,8 @@ Route::middleware('auth')->group(function () {
         ->name('posts.delete');
     Route::get('/post/{post}', [PostController::class, 'show'])
         ->name('posts.show');
+    Route::post('/post/search', [PostController::class, 'search'])
+        ->name('posts.search');
 
     Route::post('/post/{post}/comment', [CommentController::class, 'store'])
         ->name('comment.store');

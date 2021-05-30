@@ -88,4 +88,10 @@ class PostController extends Controller
         toastr()->success('Data has been deleted successfully!');
         return redirect()->route('posts.index');
     }
+
+    public function search(Request $request)
+    {
+        $posts = $this->postService->searchPost($request->search);
+        return view('post.index', ['posts' => $posts, 'tags' => $this->allTags]);
+    }
 }

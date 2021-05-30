@@ -48,6 +48,13 @@ class PostService
         }
     }
 
+    public function searchPost($searchName)
+    {
+        $posts = Post::where('name', 'LIKE', "%{$searchName}%")
+                     ->get();
+        return $posts;
+    }
+
     public function storeComment($comment, Post $post)
     {
         $comment = Comment::create([

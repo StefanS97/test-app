@@ -10,7 +10,6 @@
                 class="btn btn-primary ml-2"><i class="fa fa-bars"></i> Post Details</a>
         </div>
         @elseif ($type === 'show')
-
             <div class="row mx-1">
                 @foreach ($post->tags as $tag)
                     <div class="mx-1">
@@ -19,7 +18,6 @@
                 @endforeach
             </div>
             <hr>
-
             <div class="row mt-4">
                 <form class="d-flex align-items-center p-2 pb-5" action="{{ route('comment.store', ['post' => $post->id]) }}" method="POST">
                     @csrf
@@ -38,7 +36,6 @@
                     </div>
                 </form>
             </div>
-            
             @foreach ($post->comments as $comment)
                 <hr>
                 <div class="row justify-content-between">
@@ -57,7 +54,6 @@
                     @endcan
                 </div>
             @endforeach
-
             <div class="row p-2 pt-5">
                 @can('update', $post)
                     <a href="{{ route('posts.edit', ['post' => $post->id]) }}" class="btn btn-success"><i class="fa fa-pen"></i> Edit Post</a>
@@ -71,7 +67,6 @@
                 @endcan
                 <a href="{{ route('posts.index') }}" class="btn btn-primary ml-auto"><i class="fa fa-backward"></i> Back</a>
             </div>
-
         @endif
     </div>
 </div>

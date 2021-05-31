@@ -11,7 +11,7 @@
                 @endif
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-lg-8">
             <div class="row">
                 @foreach ($posts as $post)
                 <div class="col-md-6">

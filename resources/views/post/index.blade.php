@@ -11,10 +11,10 @@
                 @endif
             </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-md-8">
             <div class="row">
                 @foreach ($posts as $post)
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <x-post type="index" :post="$post"/>
                 </div>
                 @endforeach
